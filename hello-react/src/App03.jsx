@@ -1,5 +1,8 @@
-import React from 'react';
-import EventPractice02 from './comps/EventPractice02';
+import React, { Component } from 'react';
+import ScrollBox from './comps/ScrollBox';
+// import ValidationSample from './comps/ValidationSample';
+// import RefSample from './comps/RefSample';
+// import EventPractice02 from './comps/EventPractice02';
 // import EventPractice from './comps/EventPractice';
 // import Say from './comps/Say';
 // import Counter from './comps/Counter';
@@ -10,10 +13,15 @@ import EventPractice02 from './comps/EventPractice02';
 // props 값은 해당 컴포넌트를 불러와 사용하는 부모컴포넌트에서 설정할수 있다
 // 현 상황에서는 App03 컴포넌트가 부모 컴포넌트이다
 
-const App03 = () => {
-  // children
-  // 컴포넌트 태그 사이의 내용을 보여주는 props
-  return <EventPractice02 />;
-};
+class App03 extends Component {
+  render() {
+    return (
+      <div>
+        <ScrollBox ref={(ref) => (this.scrollBox = ref)} />
+        <button onClick={() => this.scrollBox.scrollToBottom()}>밑으로</button>
+      </div>
+    );
+  }
+}
 
 export default App03;
