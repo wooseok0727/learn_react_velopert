@@ -1,5 +1,7 @@
 import React from 'react';
-import Say from './comps/Say';
+import EventPractice02 from './comps/EventPractice02';
+// import EventPractice from './comps/EventPractice';
+// import Say from './comps/Say';
 // import Counter from './comps/Counter';
 // import MyComponent from './comps/MyComponent';
 // import MyComponent02 from './comps/MyComponent02';
@@ -11,7 +13,7 @@ import Say from './comps/Say';
 const App03 = () => {
   // children
   // 컴포넌트 태그 사이의 내용을 보여주는 props
-  return <Say />;
+  return <EventPractice02 />;
 };
 
 export default App03;
