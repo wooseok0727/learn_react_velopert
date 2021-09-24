@@ -13,16 +13,22 @@
 - node16버전도 node14로 변경
 - yarn remove node-sass
 - yarn add node-sass@4.14.1
+- sass library
+- yarn add open-color include-media
 
 ## CSS Module
 
 - 스타일을 작성할때 CSS 클래스가 다른 CSS 클래스의 이름과  
   절대 충돌하지 않도록 파일마다 고유한 이름을 자동 생성해주는 옵션
+- classnames 는 CSS 클래스를 조건부로 설정할때 매우 유용한 라이브러리
+- yarn add classnames
 
 ## styled-components
 
 - 스타일을 자바스크립트 파일에 내장시키는 방식으로 스타일을 작성함과  
   동시에 해당 스타일이 적용된 컴포넌트를 만들수 있게 해준다
+- CSS-in-JS
+- yarn add styled-components
 
 ### creat-react-app
 
