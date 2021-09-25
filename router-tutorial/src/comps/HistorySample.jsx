@@ -12,7 +12,7 @@ export default class HistorySample extends Component {
   };
 
   componentDidMount() {
-    // 페이지에 변화가 새이려고 할 때마다 정말 나갈 것인지 질문
+    // 페이지에 변화가 생기려고 할 때마다 정말 나갈 것인지 질문
     this.unblock = this.props.history.block("정말 떠나실 건가요?");
   }
 
