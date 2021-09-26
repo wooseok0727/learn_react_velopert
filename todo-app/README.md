@@ -5,7 +5,7 @@
 ## TodoTemplate
 
 - 화면을 가운데 정렬하고 타이틀을 보여주기
-- children으로 내부 JSX을 prps로 받아 와서 렌더링
+- children으로 내부 JSX을 props로 받아 와서 렌더링
 
 ## TodoInsert
 

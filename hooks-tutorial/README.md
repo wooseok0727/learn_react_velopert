@@ -11,7 +11,7 @@
 
 - 리액트 컴포넌트가 렌더링 될 때마다 특정 작업을 수행하도록  
   설정을 할수 있는 HOOK
-- 클래스형 컴포넌트의 componetDidMount 와 componetDidUpdate를  
+- 클래스형 컴포넌트의 componentDidMount 와 componentDidUpdate를  
   합친 형태로 보아도 무방하다
 
 ## useReducer
