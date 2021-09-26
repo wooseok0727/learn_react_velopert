@@ -13,10 +13,19 @@
 
 ## 뉴스 뷰어 UI 만들기
 
+- yarn add styled-components
+
 ## 데이터 연동하기
 
 ## 카테고리 기능 구현하기
 
 ## 리액트 라우터 적용하기
 
+- yarn add react-router-dom
+
 ## usePromise 커스텀 Hook 만들기
+
+# API를 연동하여 개발할 때 절대 잊지말아야 할 유의 사항
+
+- useEffect 에 등록하는 함수는 async로 작성하면 안된다
+- 그 대신 함수 내부에 async 함수를 따로 만들어 주어야 한다
