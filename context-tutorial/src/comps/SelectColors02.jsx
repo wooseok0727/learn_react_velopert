@@ -3,6 +3,9 @@ import ColorContext from "../contexts/color";
 
 const colors = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"];
 
+// 클래스형 컴포넌트에서
+// contextType 활용
+
 class SelectColors extends Component {
   static contextType = ColorContext;
 
