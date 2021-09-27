@@ -27,3 +27,4 @@
 - yarn add webpack-node-externals
 - yarn add redux react-redux redux-thunk axios
 - yarn add redux-saga
+- yarn add @loadable/component @loadable/server @loadable/webpack-plugin @loadable/babel-plugin
