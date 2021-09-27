@@ -3,6 +3,8 @@
 - UI를 서버에서 렌더링하는 것을 의미
 - SSR을 구현하면 사용자가 웹 서비스를 방문했을 때 서버 쪽에서  
   초기 렌더링을 대신해준다
+- 서버 사이드 렌더링을 구현하면 첫 번째 렌더링은 서버를 통해 하지만,  
+  그 이후에는 브라우저에서 처리한다
 
 ## 장점
 
@@ -22,3 +24,6 @@
 ### settings
 
 - yarn add react-router-dom
+- yarn add webpack-node-externals
+- yarn add redux react-redux redux-thunk axios
+- yarn add redux-saga
