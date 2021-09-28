@@ -48,3 +48,31 @@
   데이터를 넣어 주면 이를 파싱하여 서버에서 사용할 수 있게 한다
 
 - yarn add koa-bodyparser
+
+### MongoDB mongoose 와 dotenv
+
+- yarn add mongoose dotenv
+
+### mongoose
+
+- 스키마(schema) : 컬렉션에 들어가는 문서 내부의 각 필드의 형식을  
+  정의하는 객체
+- 모델(model) : 스키마를 사용하여 만드는 인스턴스로,  
+  데이터베이스에서 실제 작업을 처리할수 있는 함수들을 지니고 있는 객체
+
+### dotenv
+
+- 환경변수들을 파일에 넣고 사용할 수 있게 하는 개발 도구
+- 서버에 주소나 계정 및 비밀번호 민감한 정보들이나  
+  환경별로 달라질 수 있는 값은 코드 안에 직접 작성하지 않고  
+  환경변수로 설정하는 것이 좋다
+- .gitignore 에서 환경변수 파일 제외
+
+### esm 으로 ES 모듈 import/export 문법 사용하기
+
+- yarn add esm
+
+### Joi
+
+- 객체 검증을 수월하게 해주는 라이브러리
+- yarn add joi
