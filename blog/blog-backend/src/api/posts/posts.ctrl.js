@@ -4,10 +4,32 @@ import Joi from '../../../node_modules/joi/lib/index';
 
 const { ObjectId } = mongoose.Types;
 
-export const checkObjectId = (ctx, next) => {
+export const getPostById = async (ctx, next) => {
   const { id } = ctx.params;
   if (!ObjectId.isValid(id)) {
     ctx.status = 400; // Bad Request
+    return;
+  }
+  try {
+    const post = await Post.findById(id).exec();
+    // 포스트가 존재하지 않을 때
+    if (!post) {
+      ctx.status = 404; // Not Found
+      return;
+    }
+    ctx.state.post = post;
+    return next();
+  } catch (e) {
+    ctx.throw(500, e);
+  }
+};
+
+export const checkOwnPost = (ctx, next) => {
+  const { user, post } = ctx.state;
+  // MongoDB 에서 조회한 테이터의 id 값을 문자열과 비교할때 반드시
+  // .toString()을 해주어야 한다
+  if (post.user._id.toString() !== user._id) {
+    ctx.status = 403;
     return;
   }
   return next();
@@ -42,6 +64,7 @@ export const write = async (ctx) => {
     title,
     body,
     tags,
+    user: ctx.state.user,
   });
   try {
     await post.save();
@@ -59,7 +82,7 @@ export const write = async (ctx) => {
     이 중에서 커스텀 헤더를 설정하는 방법을 사용
 */
 /*
-    GET /api/posts
+    GET /api/posts?username=&tag=$page=
 */
 export const list = async (ctx) => {
   // query는 문자열이기 떄문에 숫자로 변환해 주어야 한다
@@ -71,14 +94,21 @@ export const list = async (ctx) => {
     return;
   }
 
+  const { tag, username } = ctx.query;
+  // tag, username 값이 유효하면 객체 안에 넣고, 그렇지 않으면 넣지 않음
+  const query = {
+    ...(username ? { 'user.username': username } : {}),
+    ...(tag ? { tags: tag } : {}),
+  };
+
   try {
-    const posts = await Post.find()
+    const posts = await Post.find(query)
       .sort({ _id: -1 })
       .limit(10)
       .skip((page - 1) * 10)
       .lean() // 이 함수를 사용하면 데이터를 처음부터 JSON 형태로 조회할 수 있다
       .exec();
-    const postCount = await Post.countDocuments().exec();
+    const postCount = await Post.countDocuments(query).exec();
     // 커스텀 HTTP 헤더 설정
     ctx.set('Last-Page', Math.ceil(postCount / 10));
     ctx.body = posts.map((post) => ({
@@ -95,17 +125,7 @@ export const list = async (ctx) => {
     GET /api/posts/:id
 */
 export const read = async (ctx) => {
-  const { id } = ctx.params;
-  try {
-    const post = await Post.findById(id).exec();
-    if (!post) {
-      ctx.status = 404; // Not Found
-      return;
-    }
-    ctx.body = post;
-  } catch (e) {
-    ctx.throw(500, e);
-  }
+  ctx.body = ctx.state.post;
 };
 
 /*

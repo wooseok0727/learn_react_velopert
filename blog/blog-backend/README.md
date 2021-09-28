@@ -76,3 +76,15 @@
 
 - 객체 검증을 수월하게 해주는 라이브러리
 - yarn add joi
+
+### JWT (JSON Web Token)
+
+- 데이터가가 JSON으로 이루어져 있는 토큰
+- 두 개체가 서로 안전하게 정보를 주고받을 수 있도록 웹 표존으로 정의된 기술
+- JWT 토근을 만들기 위해서 jsonwebtoken 모듈 설치
+- yarn add jsonwebtoken
+
+### bcrypt
+
+- 비밀번호 보안을 위한 단방향 해싱 함수를 지원해주는 라이이브러리
+- yarn add bcrypt

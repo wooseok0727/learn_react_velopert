@@ -8,11 +8,7 @@
 
 - 자주 사용되는 CSS 전처리기(pre-processor) 중 하나로  
   확장된 CSS 문법을 사용하여 CSS 코드를 더욱 쉽게 작성할 수 있게 해준다
-- node-sass 버전이 지원되나 확인해야한다
-- 버전 호환 안될시 4 버전대 사용
-- node16버전도 node14로 변경
-- yarn remove node-sass
-- yarn add node-sass@4.14.1
+- yarn add sass
 - sass library
 - yarn add open-color include-media
 
