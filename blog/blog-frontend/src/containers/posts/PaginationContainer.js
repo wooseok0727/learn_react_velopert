@@ -12,6 +12,7 @@ const PaginationContainer = ({ location, match }) => {
 
   // 포스트 데이터가 없나 로딩 중이면 아무것것도 보여주지 않음
   if (!posts || loading) return null;
+
   const { username } = match.params;
 
   // page가 없으면 1을 기본값으로 사용

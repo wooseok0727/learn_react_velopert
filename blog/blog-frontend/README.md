@@ -31,3 +31,17 @@
 - 포스트 목록 페이지
 - yarn add qs
 - 페이지네이션
+
+## 수정/삭제 기능 구현
+
+- 포스트 수정
+- 포스트 삭제
+- react-helmet-async 로 meta 태그 설정  
+  yarn add react-helmet-async
+
+### 프로젝트 빌드하기
+
+- 클라이언트 yarn build
+- 서버를 통해 blog-frontend/build 디렉터리 안의 파일을  
+  사용할 수 있도록 koa-static 사용하여 정적 파일 제공 기능 구현
+- yarn add koa-static
